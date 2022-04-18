@@ -1,4 +1,4 @@
-import 'package:appcode/pages/components/body.dart';
+import 'package:appcode/pages/body.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {

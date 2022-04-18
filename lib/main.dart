@@ -1,6 +1,6 @@
-import 'package:appcode/pages/components/heartrate.dart';
+import 'package:appcode/pages/history/heartrate.dart';
 import 'package:appcode/pages/components/oxygen.dart';
-import 'package:appcode/pages/components/temperature.dart';
+import 'package:appcode/pages/history/temperature.dart';
 import 'package:flutter/material.dart';
 import 'package:appcode/pages/home.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,9 +21,9 @@ Future<void> main() async {
       ),
       home: Home(),
       routes: {
-        '/pulse': (context) => HeartRate(),
-        '/oxygen': (context) => Oxygen(),
-        '/temp': (context) => Temperature(),
+        '/pulseHistory': (context) => HeartRate(),
+        '/oxygenHistory': (context) => Oxygen(),
+        '/tempHistory': (context) => Temperature(),
       },
     ));
 }
