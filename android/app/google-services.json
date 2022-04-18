@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "77277761972",
+    "firebase_url": "https://esp32-temp-reading-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "esp32-temp-reading",
+    "storage_bucket": "esp32-temp-reading.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77277761972:android:aded317d167d0d42f0a2e1",
+        "android_client_info": {
+          "package_name": "com.example.appcode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77277761972-p1lqpbc2s0nb2j1mvjhf93ka84qfqqc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYNDAiY1y3g27O3jpw6FfPSCd5IyVtIZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77277761972-p1lqpbc2s0nb2j1mvjhf93ka84qfqqc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
