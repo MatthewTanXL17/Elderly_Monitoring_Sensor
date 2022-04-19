@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:appcode/pages/components/home_buttons.dart';
+import 'package:appcode/widgets/home_buttons.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class HomeBody extends StatelessWidget {
             children: [
               MenuButtons(
                 onTap: () {
-                  Navigator.pushNamed(context, '/pulseHistory');
+                  Navigator.pushNamed(context, '/pulseRealtime');
                 },
                 heightfromtop: 0,
                 size: size,
@@ -52,7 +52,7 @@ class HomeBody extends StatelessWidget {
               ),
               MenuButtons(
                 onTap: () {
-                  Navigator.pushNamed(context, '/oxygenHistory');
+                  Navigator.pushNamed(context, '/oxygenRealtime');
                 },
                 heightfromtop: 10,
                 size: size,
@@ -69,18 +69,18 @@ class HomeBody extends StatelessWidget {
             children: [
               MenuButtons(
                 onTap: () {
-                  Navigator.pushNamed(context, '/tempHistory');
+                  Navigator.pushNamed(context, '/tempRealtime');
                 },
                 heightfromtop: 10,
                 size: size,
                 title: 'Body Temperature',
                 icon: 'assets/thermometer.png',
                 fontsize: 18,
-                imagescale: 5,
+                imagescale: 6,
               ),
               MenuButtons(
                 onTap: () {
-                  Navigator.pushNamed(context, '/pulse');
+                  Navigator.pushNamed(context, '/fallHistory');
                 },
                 heightfromtop: 10,
                 size: size,

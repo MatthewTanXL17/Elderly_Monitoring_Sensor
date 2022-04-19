@@ -1,8 +1,12 @@
-import 'package:appcode/pages/history/heartrate.dart';
-import 'package:appcode/pages/components/oxygen.dart';
-import 'package:appcode/pages/history/temperature.dart';
+import 'package:appcode/pages/history/fall_history.dart';
+import 'package:appcode/pages/history/heartrate_history.dart';
+import 'package:appcode/pages/history/oxygen_history.dart';
+import 'package:appcode/pages/history/temperature_history.dart';
+import 'package:appcode/pages/realtime/heartrate_realtime.dart';
+import 'package:appcode/pages/realtime/oxygen_realtime.dart';
+import 'package:appcode/pages/realtime/temperature_realtime.dart';
 import 'package:flutter/material.dart';
-import 'package:appcode/pages/home.dart';
+import 'package:appcode/pages/Screens/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -21,9 +25,13 @@ Future<void> main() async {
       ),
       home: Home(),
       routes: {
-        '/pulseHistory': (context) => HeartRate(),
-        '/oxygenHistory': (context) => Oxygen(),
-        '/tempHistory': (context) => Temperature(),
+        '/pulseRealtime': (context) => HeartRateRealtime(),
+        '/oxygenRealtime': (context) => OxygenRealTime(),
+        '/tempRealtime': (context) => TemperatureRealTime(),
+        '/pulseHistory': (context) => HeartRateHistory(),
+        '/oxygenHistory': (context) => OxygenHistory(),
+        '/tempHistory': (context) => TemperatureHistory(),
+        '/fallHistory': (context) => FallHistory()
       },
     ));
 }

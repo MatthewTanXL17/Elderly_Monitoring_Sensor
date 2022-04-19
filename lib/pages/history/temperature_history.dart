@@ -5,36 +5,22 @@ import 'package:firebase_database/firebase_database.dart';
 FirebaseDatabase database = FirebaseDatabase.instance;
 DatabaseReference ref = FirebaseDatabase.instance.ref();
 
-class HeartRate extends StatefulWidget {
-  const HeartRate({Key? key}) : super(key: key);
+class TemperatureHistory extends StatefulWidget {
+  const TemperatureHistory({Key? key}) : super(key: key);
 
   @override
-  _HeartRateState createState() => _HeartRateState();
+  _TemperatureState createState() => _TemperatureState();
 }
 
-class _HeartRateState extends State<HeartRate> {
-  // showData() async {
-  //   final snapshot = await ref.child('readings/store').get();
-  //   if (snapshot.exists) {
-  //     print(snapshot.value);
-  //     print("/n");
-  //     print(snapshot.key);
-  //     print("/n");
-  //     print(snapshot.children);
-  //   } else {
-  //     print('No data available');
-  //   }
-  // }
-
-  Query dref = FirebaseDatabase.instance
+class _TemperatureState extends State<TemperatureHistory> {
+  Query tempHist = FirebaseDatabase.instance
       .ref()
-      .child('readings/store')
-      .orderByChild('timestamp');
+      .child('readings/store');
 
-  Widget _buildPulseHistory({required Map pulse}) {
+  Widget _buildTempHistory({required Map temperature}) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
-      height: 80,
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 4),
+      height: 70,
       decoration: BoxDecoration(
         color: Colors.grey[500],
         borderRadius: BorderRadius.circular(20),
@@ -45,6 +31,7 @@ class _HeartRateState extends State<HeartRate> {
         children: [
           Row(
             children: [
+              SizedBox(width: 6),
               Icon(
                 Icons.access_time_outlined,
                 color: Colors.white,
@@ -52,23 +39,23 @@ class _HeartRateState extends State<HeartRate> {
               ),
               SizedBox(width: 6),
               Text(
-                pulse['timestamp'],
+                temperature['timestamp'],
                 style: TextStyle(
                     fontSize: 15,
                     color: Colors.white,
                     fontWeight: FontWeight.w600),
               ),
               SizedBox(
-                width: 80,
+                width: 45,
               ),
               Image.asset(
-                'assets/pulse-rate.png',
+                'assets/thermometer.png',
                 height: 40,
               ),
               SizedBox(
                 width: 6,
               ),
-              Text(pulse['BPM'],
+              Text(temperature['celcius'] + "°C",
                   style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
@@ -85,7 +72,7 @@ class _HeartRateState extends State<HeartRate> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Heart Rate!'),
+          title: Text('Temperature!'),
         ),
         body: Container(
           height: double.infinity,
@@ -94,14 +81,15 @@ class _HeartRateState extends State<HeartRate> {
             thickness: 10,
             radius: Radius.circular(10),
             child: FirebaseAnimatedList(
-              query: dref,
+              query: tempHist,
               itemBuilder: (BuildContext context, DataSnapshot snapshot,
                   Animation<double> animation, int index) {
-                Map pulse = snapshot.value as Map;
-                return _buildPulseHistory(pulse: pulse);
+                Map temperature = snapshot.value as Map;
+                return _buildTempHistory(temperature: temperature);
               },
             ),
           ),
-        ));
+        )
+    );
   }
 }
