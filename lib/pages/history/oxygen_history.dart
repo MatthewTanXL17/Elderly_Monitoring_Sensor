@@ -2,9 +2,6 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-FirebaseDatabase database = FirebaseDatabase.instance;
-DatabaseReference ref = FirebaseDatabase.instance.ref();
-
 class OxygenHistory extends StatefulWidget {
   const OxygenHistory({Key? key}) : super(key: key);
 
@@ -72,7 +69,7 @@ class _OxygenState extends State<OxygenHistory> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Oxygen!'),
+          title: Text('SpO2 History!'),
         ),
         body: Container(
           height: double.infinity,

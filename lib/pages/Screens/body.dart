@@ -26,9 +26,9 @@ class HomeBody extends StatelessWidget {
           SizedBox(
             height: size.height * 0.03,
           ),
-          Center(
+          const Center(
             child: Text(
-              "Please select the status that you would wish to monitor.",
+              "Please select the status that you wish to monitor.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18),
             ),
@@ -39,6 +39,7 @@ class HomeBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              //Go to real time pulse rate readings page
               MenuButtons(
                 onTap: () {
                   Navigator.pushNamed(context, '/pulseRealtime');
@@ -50,6 +51,7 @@ class HomeBody extends StatelessWidget {
                 fontsize: 20,
                 imagescale: 5,
               ),
+              //Go to real time oxygen readings page
               MenuButtons(
                 onTap: () {
                   Navigator.pushNamed(context, '/oxygenRealtime');
@@ -67,6 +69,7 @@ class HomeBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              //Go to real time temperature readings page
               MenuButtons(
                 onTap: () {
                   Navigator.pushNamed(context, '/tempRealtime');
@@ -78,6 +81,7 @@ class HomeBody extends StatelessWidget {
                 fontsize: 18,
                 imagescale: 6,
               ),
+              //Go to fall history page
               MenuButtons(
                 onTap: () {
                   Navigator.pushNamed(context, '/fallHistory');

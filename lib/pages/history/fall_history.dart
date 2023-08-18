@@ -2,9 +2,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 
-FirebaseDatabase database = FirebaseDatabase.instance;
-DatabaseReference ref = FirebaseDatabase.instance.ref();
-
 class FallHistory extends StatefulWidget {
   const FallHistory({Key? key}) : super(key: key);
 
@@ -16,17 +13,6 @@ class _FallHistoryState extends State<FallHistory> {
   Query fallHist = FirebaseDatabase.instance
       .ref()
       .child('readings/storefall');
-
-  // showData() async {
-  //   final snapshot = await ref.child('readings/storefall').get();
-  //   if (snapshot.exists) {
-  //     print(snapshot.value);
-  //     print(snapshot.key);
-  //     print(snapshot.runtimeType);
-  //   } else {
-  //     print('No data available');
-  //   }
-  // }
 
   Widget _buildFallHistory({required Map fallhistory}) {
     return Container(
@@ -75,7 +61,7 @@ class _FallHistoryState extends State<FallHistory> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Fall History!'),
+          title: Text('Fall Detection History'),
         ),
         body: Container(
           height: double.infinity,

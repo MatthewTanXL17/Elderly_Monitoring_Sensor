@@ -20,11 +20,11 @@ Future<void> main() async {
       debugShowCheckedModeBanner: false,
       title: "Elderly Monitoring System",
       theme: ThemeData(
-        fontFamily: 'Poppins',
-        brightness: Brightness.dark,
+        fontFamily: 'Poppins', //set font for whole application
+        brightness: Brightness.dark, //set dark theme for application
       ),
       home: Home(),
-      routes: {
+      routes: { //routes for app to navigate to
         '/pulseRealtime': (context) => HeartRateRealtime(),
         '/oxygenRealtime': (context) => OxygenRealTime(),
         '/tempRealtime': (context) => TemperatureRealTime(),

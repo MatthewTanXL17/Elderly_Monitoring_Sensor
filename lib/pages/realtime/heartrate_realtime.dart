@@ -2,9 +2,6 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-FirebaseDatabase database = FirebaseDatabase.instance;
-DatabaseReference ref = FirebaseDatabase.instance.ref();
-
 class HeartRateRealtime extends StatefulWidget {
   const HeartRateRealtime({Key? key}) : super(key: key);
 
@@ -35,7 +32,7 @@ class _HeartRateRealtimeState extends State<HeartRateRealtime> {
               leading: Image.asset('assets/pulse-rate.png', fit: BoxFit.fill,),
               title: Text('Pulse Rate'),
               subtitle: Text(pulseRealtime['BPM'],style: TextStyle(fontSize: 20)),
-              trailing: Text(pulseRealtime['timestamp']),
+              //trailing: Text(pulseRealtime['timestamp']),
             ),
             ButtonBar(
               children: [
@@ -57,7 +54,7 @@ class _HeartRateRealtimeState extends State<HeartRateRealtime> {
         .size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Real Time Pulse Rate"),
+        title: Text("Realtime Pulse Rate"),
       ),
       body: Container(
         child: FirebaseAnimatedList(

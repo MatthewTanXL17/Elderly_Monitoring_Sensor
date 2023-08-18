@@ -33,15 +33,15 @@ class _TemperatureRealTimeState extends State<TemperatureRealTime> {
           children: [
             ListTile(
               leading: Image.asset('assets/thermometer.png', fit: BoxFit.fill,),
-              title: Text('Body Temperature',style: TextStyle(fontSize: 25) ),
-              subtitle: Text(temperatureRealtime['celcius'] + "°C", style: TextStyle(fontSize: 30)),
-              // trailing: Text(temperatureRealtime['timestamp']),
+              title: const Text('Body Temperature',style: const TextStyle(fontSize: 25) ),
+              subtitle: Text(temperatureRealtime['celcius'] + "°C", style: const TextStyle(fontSize: 25)),
+              //trailing: Text(temperatureRealtime['timestamp']),
             ),
             ButtonBar(
               children: [
                 ElevatedButton(onPressed: () {
                   Navigator.pushNamed(context, '/tempHistory');
-                }, child: Text("Show History"))
+                }, child: const Text("Show History"))
               ],
             )
           ],
@@ -57,7 +57,7 @@ class _TemperatureRealTimeState extends State<TemperatureRealTime> {
         .size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Real Time Body Temperature"),
+        title: const Text("Realtime Body Temperature"),
       ),
       body: FirebaseAnimatedList(
         query: tempSync,

@@ -2,9 +2,6 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-FirebaseDatabase database = FirebaseDatabase.instance;
-DatabaseReference ref = FirebaseDatabase.instance.ref();
-
 class HeartRateHistory extends StatefulWidget {
   const HeartRateHistory({Key? key}) : super(key: key);
 
@@ -16,18 +13,7 @@ class _HeartRateState extends State<HeartRateHistory> {
   Query pulseHist = FirebaseDatabase.instance
       .ref()
       .child('readings/store');
-  showData() async {
-    final snapshot = await ref.child('readings/store').get();
-    if (snapshot.exists) {
-      print(snapshot.value);
-      print("/n");
-      print(snapshot.key);
-      print("/n");
-      print(snapshot.children);
-    } else {
-      print('No data available');
-    }
-  }
+
   Widget _buildPulseHistory({required Map pulsehistory}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5, horizontal: 4),
@@ -83,7 +69,7 @@ class _HeartRateState extends State<HeartRateHistory> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Pulse Rate History!'),
+          title: Text('Pulse Rate History'),
         ),
         body: Container(
           height: double.infinity,

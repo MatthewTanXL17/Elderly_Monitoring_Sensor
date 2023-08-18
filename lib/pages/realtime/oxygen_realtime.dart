@@ -2,9 +2,6 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-FirebaseDatabase database = FirebaseDatabase.instance;
-DatabaseReference ref = FirebaseDatabase.instance.ref();
-
 class OxygenRealTime extends StatefulWidget {
   const OxygenRealTime({Key? key}) : super(key: key);
 
@@ -33,15 +30,15 @@ class _OxygenRealTimeState extends State<OxygenRealTime> {
           children: [
             ListTile(
               leading: Image.asset('assets/oxygen-saturation.png', fit: BoxFit.fill,),
-              title: Text('Blood Oxygen Saturation'),
-              subtitle: Text(oxygenRealtime['SpO2'], style: TextStyle(fontSize: 20),),
-              trailing: Text(oxygenRealtime['timestamp']),
+              title: const Text('Blood Oxygen Saturation'),
+              subtitle: Text(oxygenRealtime['SpO2'], style: const TextStyle(fontSize: 20),),
+              //trailing: Text(oxygenRealtime['timestamp']),
             ),
             ButtonBar(
               children: [
                 ElevatedButton(onPressed: () {
                   Navigator.pushNamed(context, '/oxygenHistory');
-                }, child: Text("Show History"))
+                }, child: const Text("Show History"))
               ],
             )
           ],
@@ -57,7 +54,7 @@ class _OxygenRealTimeState extends State<OxygenRealTime> {
         .size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Realtime Blood O2 Saturation"),
+        title: const Text("Realtime Blood O2 Saturation"),
       ),
       body: Container(
         child: FirebaseAnimatedList(
